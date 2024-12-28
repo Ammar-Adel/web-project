@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="Stylesheets/home.css" />
+  <link rel="stylesheet" href="Stylesheets/footer.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h2 class="logoImageContainer">
+        <img class="logoImage" src="footer imgs/loggoTest.png">
+      </h2>
+      <ul>
+        <li>
+          <a class="active" id="homeLink" href="#home">Home</a>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <!-- <li><a href="#">Blog</a></li> -->
+        <li>
+          <a id="contactLink" href="contact.html">Contact</a>
+        </li>
+      </ul>
+      <div class="buttons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <button onclick="formToggle()" type="submit">Sign in</button>
+      </div>
+    </nav>
+
+  </header>
+  <style>
+
+  </style>
+
+  <main>
+    <!-- <section><img src="home imgs/Burger_With_Neon.jpg" width="100%"></section> -->
+    <style>
+      div.paragraphs {
+        margin-top: 145px;
+
+      }
+
+      div.paragraphs h1,
+      div.paragraphs p {
+        color: black;
+        text-shadow: 3px 5px 7px #FFA500, 2px 2px 0px white;
+        font-size: 38px;
+        max-width: 28%;
+        font-weight: bold;
+        font-family: cursive, Arial, Helvetica, sans-serif;
+
+      }
+    </style>
+    <div class="paragraphs">
+      <h1>Our wonderful restaurant - <br> Flavors That Delight</h1>
+
+      <p>Experience Culinary Excellence in Every Bite</p>
+
+      <button id="btnGoMenu"> Explore Our Menu</button>
+    </div>
+
+    <!--       <h1>
+
+      Our wonderful restaurant
+      Flavors That Delight – Welcome to food field
+    </h1>
+      <p>
+        Experience the finest dishes crafted with care, using fresh ingredients and flavors inspired by global cuisine.
+        Discover an unforgettable dining journey!
+      </p>
+      <button>
+        Explore Our Menu
+
+      </button> -->
+  </main>
+  <footer id="contact">
+    <div id="flexParent">
+      <!-- left -->
+      <div id="leftWords">
+        <img class="footer-logo" src="footer imgs/loggoTest.png" alt="">
+
+        <p>Our wonderful restaurant<br /></p>
+      </div>
+
+      <!-- center -->
+      <div id="centerWords">
+        Weekly offer <br />
+        pre - order options <br />
+        Book a table
+      </div>
+      <!-- third -->
+      <div id="thirdWords"></div>
+      <!-- last -->
+      <div id="contactWords">
+        Get in touch <br />
+        <span>
+          <img class="phone" src="./Footer imgs/Phone.png" alt="" />
+          <a href="tel"> 010-1010-1010</a></span><br />
+
+        <a href="#">
+          <img src="./Footer imgs/Facebook Circled.png" alt="" /></a>
+        <a href="#">
+          <img src="./Footer imgs/Twitter Circled.png" alt="" /></a>
+        <a href="#">
+          <img src="./Footer imgs/Instagram Circle.png" alt="" /></a>
+        <a href="#">
+          <img src="./Footer imgs/LinkedIn Circled.png" alt="" /></a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // DOM elements
+    const date = new Date();
+    const year = date.getFullYear();
+    const form = document.querySelector("#form1");
+    const links = document.querySelectorAll("li a");
+    const thirdWords = document.querySelector("#thirdWords");
+
+    thirdWords.innerHTML = `Yosry ragheb street <br />
+          Assuit city <br />
+          &copy; ${year} all right reserved
+        `;
+
+    // links add and remove style
+    links.forEach((el) =>
+      el.addEventListener("click", () => {
+        links.forEach((el) => {
+          el.classList.remove("active");
+        });
+        el.classList.add("active");
+      })
+    );
+
+    // form appear and disappear
+    function formToggle() {
+      form.classList.toggle("form");
+    }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+    });
+  </script>
+</body>
+
+</html>
